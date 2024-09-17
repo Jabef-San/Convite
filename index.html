@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convite de Sara e Samuel</title>
+  <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('images/Sara & Samuel.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .video-container {
+      width: 60vw; /* Ajuste o tamanho da largura do vídeo */
+      height: 33.75vw; /* Mantém a proporção de 16:9 */
+      position: absolute;
+      top: 36%; /* Ajuste preciso da posição vertical */
+      left: 10%; /* Ajuste preciso da posição horizontal */
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <video id="my-video" class="video-js vjs-default-skin" controls preload="auto">
+      <source src="https://res.cloudinary.com/dichvo8w2/video/upload/v1726580684/Sara_Samuel_01.12.2024_cklq46.mov" type="video/mp4" />
+      Seu navegador não suporta HTML5 video.
+    </video>
+  </div>
+
+  <!-- Video.js JavaScript -->
+  <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+  <script>
+    // Função para entrar em tela cheia
+    function openFullscreen(videoElement) {
+      if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen();
+      } else if (videoElement.mozRequestFullScreen) { // Para Firefox
+        videoElement.mozRequestFullScreen();
+      } else if (videoElement.webkitRequestFullscreen) { // Para Chrome, Safari e Opera
+        videoElement.webkitRequestFullscreen();
+      } else if (videoElement.msRequestFullscreen) { // Para IE/Edge
+        videoElement.msRequestFullscreen();
+      }
+    }
+
+    // Detecta quando o vídeo começa a tocar e aciona o modo tela cheia
+    const video = document.getElementById('my-video');
+    video.addEventListener('play', function() {
+      openFullscreen(video);
+    });
+  </script>
+</body>
+</html>

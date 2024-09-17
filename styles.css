@@ -1,0 +1,40 @@
+/* Reset de margem e padding */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    height: 100vh; /* Garante que o body preencha 100% da tela */
+  }
+  
+  /* Estilos do container de vídeo */
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Mantém a altura total da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Estilos do vídeo para preencher a tela */
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste para cobrir toda a tela sem distorção */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Aumenta a fonte da barra de controle para melhorar a usabilidade */
+  .vjs-default-skin .vjs-control-bar {
+    font-size: 1.5em;
+  }
+  
+  /* Estilo para dispositivos menores */
+  @media (max-width: 768px) {
+    .vjs-default-skin .vjs-control-bar {
+      font-size: 1em; /* Ajuste da barra de controle para telas menores */
+    }
+  }
+  
